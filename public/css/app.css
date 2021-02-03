@@ -1,1 +1,199 @@
 /* Add your styles here. */
+
+.grid-container-chloe{
+    display:flex;
+    width: 100%;
+}
+
+body{
+    width: 100%;
+}
+
+h1 {text-align: center;
+    background-color: #FEF6FF;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  h2 {
+    text-align: center;
+    background-color: #DABEDE;
+    font-family: "Monaco" , "Courier New", monospace; 
+    font-size: medium;   
+  }
+
+a { 
+    background-color: #DABEDE;
+    font-family: "Copperplate", fantasy;
+    text-transform: UPPERCASE;
+    text-align: center;
+}
+ul {text-align: center;
+    border: 1px solid black;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+h3 {
+margin: 10px 20px;
+    font-size: x-small;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h4 {
+
+    font-size: small;
+    font-family: Arial, Helvetica, sans-serif;
+}
+p {
+
+    font-size: xx-small;
+    font-family: Arial, Helvetica, sans-serif;
+}
+@media only screen and(min-width:401px){
+    body {
+        background-color: rgb(235, 236, 230);
+      }
+      h3 {
+        margin-left: 20px;
+            font-size: medium;
+        }
+     .grid-container-chloe{
+         display:inline-flex
+     }
+    
+   
+.profileImage { grid-area: profilepic; 
+    display: block;
+    margin-left: 20px;
+    float: left;
+    width: 115px;
+    height: 115px;
+    }
+.postedBy { grid-area: user;  }
+.postedDate { grid-area: posted; }
+.postImage { grid-area: image; 
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 600px;
+    height: 600px
+    }
+.likeButton { grid-area: likebutton;
+ float: left;
+ margin: 10px 20px;
+}
+.likesCounter { grid-area: likes;
+    float: left;
+    margin: 10px 10px;
+border: 0.5px solid black;
+font-size: 10px }
+.dislikesCounter { grid-area: dislikes;
+    float: right; 
+    margin: 10px 10px;
+    border: 0.5px solid black;
+    font-size: 10px }
+.dislikeButton { grid-area: dislikebutton;
+float: right; 
+margin: 10px 20px;  
+}
+
+.postMessage { grid-area: message; }
+
+
+.grid-container-chloe {
+
+    grid-template-columns: 15% 1fr 25%;
+  grid-auto-rows: 50px; 
+    grid-template-areas:
+      'profilepic message message message message'
+      'profilepic user user posted posted'
+      'image image image image image'
+      'image image image image image'
+      'image image image image image'
+      'image image image image image'
+      'image image image image image'
+      'likebutton likes empty dislikebutton dislikes';
+    grid-gap: 10px;
+    background-color: #2196F3;
+    padding: 10px;
+    
+  }
+  .grid-container-chloe > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+  }
+}
+
+@media only screen and (max-width:400px){
+
+    body {
+        background-color: rgb(200, 235, 46);
+    }     
+    
+    h3 {
+        margin-left: 20px;
+        font-size: x-small;
+    }
+    
+    .profileImage { grid-area: profilepic; 
+        display: block;
+        margin-left: 20px;
+        float: left;
+        width: 75px;
+        height: 75px;
+        }
+    .postedBy { grid-area: user;  }
+    .postedDate { grid-area: posted; }
+    .postImage { grid-area: image; 
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 300px;
+        height: 300px
+        }
+    .likeButton { grid-area: likebutton;
+    float: left;
+    margin: 10px 20px;
+    }
+    .likesCounter { grid-area: likes;
+        float: left;
+        margin: 10px 10px;
+    border: 0.5px solid black;
+    font-size: 10px }
+    .dislikesCounter { grid-area: dislikes;
+        float: right; 
+        margin: 10px 10px;
+        border: 0.5px solid black;
+        font-size: 10px }
+    .dislikeButton { grid-area: dislikebutton;
+    float: right; 
+    margin: 10px 20px;  
+    }
+
+    .postMessage { grid-area: message; }
+
+
+    .grid-container-chloe {
+        display: inline-block;
+        grid-template-areas:
+        'profilepic message message message message'
+        'profilepic user user posted posted'
+        'image image image image image'
+        'image image image image image'
+        'image image image image image'
+        'image image image image image'
+        'image image image image image'
+        'likebutton likes empty dislikebutton dislikes';
+        grid-gap: 10px;
+        background-color: #2196F3;
+        padding: 10px;
+    }
+    .grid-container-chloe > div {
+        background-color: rgba(255, 255, 255, 0.8);
+        text-align: center;
+        padding: 20px 0;
+        font-size: 30px;
+    }
+}
