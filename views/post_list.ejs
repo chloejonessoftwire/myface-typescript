@@ -4,28 +4,46 @@
 <%- include('_header') -%>
 <body>
 <h1>Posts</h1>
+<br>
 <ul>
     <% results.forEach(function(post) {%>
-        <li>
-           <h3> <%= post.message %></h3>
-              <p> Post created on  <%= post.createdAt %> by <%= post.postedBy.name %></p>
+        
+          
+           <img src= '<%= post.postedBy.profileImageUrl %>' width="80" height="80" style="float:left; padding: 15px;">
+                <h3> <%= post.message %></h3>
+                <h4> by <%= post.postedBy.name %> </h4>
+              <p> Post created on  <%= post.createdAt %> </p>
                                
-         <img src='<%= post.imageUrl %>' value = "Image">
+         <img src='<%= post.imageUrl %>' value = "Image" style="padding: 10px;" >
          <form method="post" action="/posts/<%= post.id %>/like/">
-            
             <button type="submit">Like</button>
         </form>
         <form method="post" action="/posts/<%= post.id %>/dislike/">
             
             <button type="submit">Dislike</button>
         </form>
-         <!-- <a href="/posts/<%= post.id %>/like/"> Like </a> -->
+        
+        <%if (post.likedBy) { %>
+            <p>  <%=post.likedBy.length %> likes. </p>
+        
+        <% } %>
+        <%if (post.likedBy==null) { %>
+            <p>  No likes. </p>
+            <% } %>  
+        
+        <%if (post.dislikedBy) { %>
+            <p>  <%=post.dislikedBy.length %> dislikes. </p>
+            
+        <% } %>
+
+        <%if (post.dislikedBy==null) { %>
+            <p>  No dislikes. </p>
+     
+        <% } %>   
+
          
-
-
-          <p> Liked by: <%=post.likedBy.length %></p>
-          <p> Disliked by: <%=post.dislikedBy.length %></p>
-        </li>
+          <br>
+        
     <% }); %>
     </ul>
 
