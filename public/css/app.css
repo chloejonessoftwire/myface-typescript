@@ -1,133 +1,71 @@
 /* Add your styles here. */
+@import "userDetail.css";
+@import "header.css";
+
+body{
+    width: 100%;
+    font-family: Segoe UI, Open Sans;
+}
 
 .grid-container-chloe{
     display:flex;
     width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
-
-body{
-    width: 100%;
+.item-post{
+    width: 33%
 }
-
-h1 {text-align: center;
-    background-color: #FEF6FF;
+title{
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-  }
+    font-family: "Open Sans";
+    text-align: center;
+}
+h1 {
+    box-sizing: border-box;
+    font-family: "Open Sans";
+}
   
-  h2 {
+h2 {
     text-align: center;
-    background-color: #DABEDE;
-    font-family: "Monaco" , "Courier New", monospace; 
+    font-family: "Open Sans";
     font-size: medium;   
-  }
+    color: white;
+}
 
-a { 
-    background-color: #DABEDE;
-    font-family: "Copperplate", fantasy;
-    text-transform: UPPERCASE;
+a { font-size: xx-large;
+    font-weight: bold;
+    color:white;
+    font-family: "Open Sans";
+    font-style: bold;
     text-align: center;
 }
-ul {text-align: center;
-    border: 1px solid black;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
 
+ul {
+    text-align: center;
+    border: 1px solid rgb(239, 223, 243);
+    box-sizing: border-box;
+    font-family: "Open Sans";
+    color:black;
 }
+
 h3 {
-margin: 10px 20px;
+    
     font-size: x-small;
     font-family: Arial, Helvetica, sans-serif;
 }
-h4 {
 
+h4 {
+    
     font-size: small;
     font-family: Arial, Helvetica, sans-serif;
 }
 p {
-
     font-size: xx-small;
     font-family: Arial, Helvetica, sans-serif;
 }
-@media only screen and(min-width:401px){
-    body {
-        background-color: rgb(235, 236, 230);
-      }
-      h3 {
-        margin-left: 20px;
-            font-size: medium;
-        }
-     .grid-container-chloe{
-         display:inline-flex
-     }
-    
-   
-.profileImage { grid-area: profilepic; 
-    display: block;
-    margin-left: 20px;
-    float: left;
-    width: 115px;
-    height: 115px;
-    }
-.postedBy { grid-area: user;  }
-.postedDate { grid-area: posted; }
-.postImage { grid-area: image; 
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 600px;
-    height: 600px
-    }
-.likeButton { grid-area: likebutton;
- float: left;
- margin: 10px 20px;
-}
-.likesCounter { grid-area: likes;
-    float: left;
-    margin: 10px 10px;
-border: 0.5px solid black;
-font-size: 10px }
-.dislikesCounter { grid-area: dislikes;
-    float: right; 
-    margin: 10px 10px;
-    border: 0.5px solid black;
-    font-size: 10px }
-.dislikeButton { grid-area: dislikebutton;
-float: right; 
-margin: 10px 20px;  
-}
-
-.postMessage { grid-area: message; }
-
-
-.grid-container-chloe {
-
-    grid-template-columns: 15% 1fr 25%;
-  grid-auto-rows: 50px; 
-    grid-template-areas:
-      'profilepic message message message message'
-      'profilepic user user posted posted'
-      'image image image image image'
-      'image image image image image'
-      'image image image image image'
-      'image image image image image'
-      'image image image image image'
-      'likebutton likes empty dislikebutton dislikes';
-    grid-gap: 10px;
-    background-color: #2196F3;
-    padding: 10px;
-    
-  }
-  .grid-container-chloe > div {
-    background-color: rgba(255, 255, 255, 0.8);
-    text-align: center;
-    padding: 20px 0;
-    font-size: 30px;
-  }
-}
 
 @media only screen and (max-width:400px){
-
     body {
         background-color: rgb(200, 235, 46);
     }     
@@ -137,55 +75,43 @@ margin: 10px 20px;
         font-size: x-small;
     }
     
-    .profileImage { grid-area: profilepic; 
+    .profileImage { 
         display: block;
         margin-left: 20px;
         float: left;
         width: 75px;
         height: 75px;
-        }
-    .postedBy { grid-area: user;  }
-    .postedDate { grid-area: posted; }
-    .postImage { grid-area: image; 
+    }
+    .postImage {
         display: block;
         margin-left: auto;
         margin-right: auto;
         width: 300px;
         height: 300px
         }
-    .likeButton { grid-area: likebutton;
+    .likeButton { 
     float: left;
     margin: 10px 20px;
     }
-    .likesCounter { grid-area: likes;
+    .likesCounter { 
         float: left;
         margin: 10px 10px;
     border: 0.5px solid black;
     font-size: 10px }
-    .dislikesCounter { grid-area: dislikes;
+    .dislikesCounter { 
         float: right; 
         margin: 10px 10px;
         border: 0.5px solid black;
         font-size: 10px }
-    .dislikeButton { grid-area: dislikebutton;
+    .dislikeButton { 
     float: right; 
     margin: 10px 20px;  
     }
 
-    .postMessage { grid-area: message; }
 
 
     .grid-container-chloe {
-        display: inline-block;
-        grid-template-areas:
-        'profilepic message message message message'
-        'profilepic user user posted posted'
-        'image image image image image'
-        'image image image image image'
-        'image image image image image'
-        'image image image image image'
-        'image image image image image'
-        'likebutton likes empty dislikebutton dislikes';
+        display: flex;
         grid-gap: 10px;
         background-color: #2196F3;
         padding: 10px;

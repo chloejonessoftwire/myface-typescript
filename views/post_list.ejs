@@ -7,58 +7,44 @@
 <br>
 <div class="grid-container-chloe">
     <% results.forEach(function(post) {%>
-             <div class="item-post">    
-        <img class="profileImage" src= '<%= post.postedBy.profileImageUrl %>'>
-                    <h3 class="postMessage"> <%= post.message %></h3>
+        <div class="item-post">    
+            <img class="profileImage" src= '<%= post.postedBy.profileImageUrl %>'>
+            <h3 class="postMessage"> <%= post.message %></h3>
             <h4 class="postedBy"> by <%= post.postedBy.name %> </h4>
-          <p class="postedDate"> Post created on  <%= post.createdAt %> </p>
-                           
-     <img class="postImage" src='<%= post.imageUrl %>' value = "Image" >
-     <form class='likeButton' method="post" action="/posts/<%= post.id %>/like/">
-        <button type="submit">Like</button>
-    </form>
-    <form class='dislikeButton' method="post" action="/posts/<%= post.id %>/dislike/">
+            <p class="postedDate"> Post created on  <%= post.createdAt %> </p>               
+            <img class="postImage" src='<%= post.imageUrl %>' value = "Image" >
+            <form class='likeButton' method="post" action="/posts/<%= post.id %>/like/">
+                <button type="submit">Like</button>
+            </form>
+            <form class='dislikeButton' method="post" action="/posts/<%= post.id %>/dislike/">
+                <button type="submit">Dislike</button>
+            </form>
+            <%if (post.likedBy) { %>
+                <p class='likesCounter'> Likes: <%=post.likedBy.length %> </p>
+            
+            <% } %>
+            <%if (post.likedBy==null) { %>
+                <p class='likesCounter' >  No likes. </p>
+                <% } %>  
+            
+            <%if (post.dislikedBy) { %>
+                <p class='dislikesCounter'> Dislikes: <%=post.dislikedBy.length %> </p>
+                
+            <% } %>
+            <%if (post.dislikedBy==null) { %>
+                <p class='dislikesCounter'>  No dislikes. </p>
         
-        <button type="submit">Dislike</button>
-    </form>
-    
-    <%if (post.likedBy) { %>
-        <p class='likesCounter'> Likes: <%=post.likedBy.length %> </p>
-    
-    <% } %>
-    <%if (post.likedBy==null) { %>
-        <p class='likesCounter' >  No likes. </p>
-        <% } %>  
-    
-    <%if (post.dislikedBy) { %>
-        <p class='dislikesCounter'> Dislikes: <%=post.dislikedBy.length %> </p>
-        
-    <% } %>
+            <% } %>   
+        </div> 
+    <% }); %>
+</div>
 
-    <%if (post.dislikedBy==null) { %>
-        <p class='dislikesCounter'>  No dislikes. </p>
- 
-    <% } %>   
-
-    </div>
-      <br>
-    
-<% }); %>
-    <div class="item item-1"> </div>
-    <div class="item item-2"> </div>
-    <div class="item item-3"> </div>
-  </div>
-<ul>
-    
-    </ul>
-
-    <%if (next) { %>
-        <a href="<%= next %>">Next</a>
-    <% } %>
-    <%if (previous) { %>
-        <a href="<%= previous %>">Previous</a>
-    <% } %>
-
+<%if (next) { %>
+    <a href="<%= next %>">Next</a>
+<% } %>
+<%if (previous) { %>
+    <a href="<%= previous %>">Previous</a>
+<% } %>
 
 </body>
 <%- include('_footer') -%>

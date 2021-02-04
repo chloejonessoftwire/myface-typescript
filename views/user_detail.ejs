@@ -2,7 +2,7 @@
 <%- include('_head') -%>
 <%- include('_header') -%>
 <body>
-     
+   
     <img src= '<%= coverImageUrl %>' width="1500" height="400">
     <img src= '<%= profileImageUrl %>' width="150" height="150" style="float:left; padding: 15px;" >
     <h1><%= name %></h1>
@@ -11,15 +11,19 @@
     <br>
             
 <h1><%= name %>'s Posts:</h1>
-
+    <div class ="postContainer">
     <% posts.forEach(function(post) {%>
-
-           <h3> <%= post.message %></h3>
-              <p> Post created on  <%= post.createdAt %></p>
-                               
-         <img src='<%= post.imageUrl %>' value = "Image">
-      
-          
+        <div class="post">
+        <div class ="postImage">
+        <img id="pimage" src='<%= post.imageUrl %>' value = "Image">
+        </div>
+        <div class="postInfo">
+        <h3> <%= post.message %></h3>
+        <p><%= name %></p>
+        <p> <%= post.createdAt %></p>
+       
+        
+<!--          
        <%if (post.likedBy) { %>
             <p>  <%=post.likedBy.length %> likes. </p>
             <p> Liked by: <%=post.likedBy %> </p>
@@ -34,15 +38,15 @@
         <% } %>
 
         <%if (post.dislikedBy==null) { %>
-            <p>  No dislikes. </p>
-     
-        <% } %>   
+            <p>  No dislikes. </p> -->
         
-
+        <!-- <% } %>   
+          -->
+         </div>
+         </div>
 
     <% }); %>
-  
-
+</div>
 
 </body>
 <%- include('_footer') -%>

@@ -1,0 +1,36 @@
+body{
+    font-family: "Open Sans";
+    background-color: #252A38;
+    color: white
+    
+}
+.postContainer{
+display: flex;
+flex-wrap: wrap;
+flex-direction: row;
+margin: auto;
+
+}
+.post{
+    width: 30%;
+    padding: 24px 24px;
+    
+}
+#pimage{
+    width: 80%;
+    padding:0px 0px;
+}
+.postImage{
+    
+}
+.postInfo{  
+    background-color: #151820;
+}
+h1{
+font-family: "Open Sans" ;
+font-size: 32px;
+color:white
+}
+h3{
+    font-size: 24px;
+}
