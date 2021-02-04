@@ -2,28 +2,29 @@
 <%- include('_head') -%>
 <%- include('_header') -%>
 <body>
-   <div class="coverImage"></div>
-    <img  src= '<%= coverImageUrl %>' width="1500" height="400">
+   <div >
+        <img class="coverImage" src= '<%= coverImageUrl %>'>
+    </div>
     <div class="profiledetails">
-  <img id="profileImage" src= '<%= profileImageUrl %>'>
-    <h1><%= name %></h1>
-    <div class="userdetail">
-    <h3><%= username %></h3> 
-    <p> Email: <%= email %></p>
-</div>
-</div>
+        <img id="profileImage" src= '<%= profileImageUrl %>'>
+        <div class="userdetail">
+            <h1><%= name %></h1>
+            <h3><%= username %></h3> 
+            <p> Email: <%= email %></p>
+        </div>
+    </div>
             
 <h1 class="postH1"><%= name %>'s Posts:</h1>
     <div class ="postContainer">
     <% posts.forEach(function(post) {%>
         <div class="post">
-        <div class ="postImage">
-        <img id="pimage" src='<%= post.imageUrl %>' value = "Image">
-        </div>
+            <div class ="postImage">
+                <img id="pimage" src='<%= post.imageUrl %>' value = "Image">
+            </div>
         <div class="postInfo">
-        <h3><%= username %></h3> 
-        <p> <%= post.createdAt %></p>
-        <h4> <%= post.message %></h4>
+            <h3><%= username %></h3> 
+            <p> <%= post.createdAt %></p>
+            <h4> <%= post.message %></h4>
         
        
         

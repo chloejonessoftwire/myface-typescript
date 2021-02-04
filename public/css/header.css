@@ -25,3 +25,32 @@ margin: 0 auto;
 nav{
     
 }
+@media only screen and (max-width: 900px){
+    a{
+        padding: 10px 10px;
+        font-size: 14px;
+    }
+    .navcontainer{
+    font-size: 14px;
+    }   
+    .myface{
+    padding-right: 200px;
+    }
+    .newpost{
+        text-align: right;
+        padding-left: 200px;
+    }
+    }
+    @media only screen and (max-width: 400px){
+        a{
+            padding: 8px 8px;
+            font-size: 10px;
+        }
+        .myface{
+            padding-right: 80px;
+            }
+            .newpost{
+                text-align: right;
+                padding-left: 80px;
+            }
+        }
