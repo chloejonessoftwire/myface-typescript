@@ -2,15 +2,18 @@
 <%- include('_head') -%>
 <%- include('_header') -%>
 <body>
-   
-    <img src= '<%= coverImageUrl %>' width="1500" height="400">
-    <img src= '<%= profileImageUrl %>' width="150" height="150" style="float:left; padding: 15px;" >
+   <div class="coverImage"></div>
+    <img  src= '<%= coverImageUrl %>' width="1500" height="400">
+    <div class="profiledetails">
+  <img id="profileImage" src= '<%= profileImageUrl %>'>
     <h1><%= name %></h1>
-    <p>Username: <%= username %></p> 
+    <div class="userdetail">
+    <h3><%= username %></h3> 
     <p> Email: <%= email %></p>
-    <br>
+</div>
+</div>
             
-<h1><%= name %>'s Posts:</h1>
+<h1 class="postH1"><%= name %>'s Posts:</h1>
     <div class ="postContainer">
     <% posts.forEach(function(post) {%>
         <div class="post">
@@ -18,9 +21,10 @@
         <img id="pimage" src='<%= post.imageUrl %>' value = "Image">
         </div>
         <div class="postInfo">
-        <h3> <%= post.message %></h3>
-        <p><%= name %></p>
+        <h3><%= username %></h3> 
         <p> <%= post.createdAt %></p>
+        <h4> <%= post.message %></h4>
+        
        
         
 <!--          
