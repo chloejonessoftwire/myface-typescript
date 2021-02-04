@@ -20,28 +20,37 @@
             <div class="postImageSpace" >         
                 <img class="postImage" src='<%= post.imageUrl %>' value = "Image" >
             </div> 
-            <form class='likeButton' method="post" action="/posts/<%= post.id %>/like/">
-                <button type="submit">Like</button>
-            </form>
-            <form class='dislikeButton' method="post" action="/posts/<%= post.id %>/dislike/">
-                <button type="submit">Dislike</button>
-            </form>
-            <%if (post.likedBy) { %>
-                <p class='likesCounter'> Likes: <%=post.likedBy.length %> </p>
-            
-            <% } %>
-            <%if (post.likedBy==null) { %>
-                <p class='likesCounter' >  No likes. </p>
-                <% } %>  
-            
-            <%if (post.dislikedBy) { %>
-                <p class='dislikesCounter'> Dislikes: <%=post.dislikedBy.length %> </p>
+
+            <div class="likesClass">
+                <form class='likeButton' method="post" action="/posts/<%= post.id %>/like/">
+                    <button type="submit">Like</button>
+                </form>
+
+                <%if (post.likedBy) { %>
+                    <p2 class='likesCounter'> Likes: <%=post.likedBy.length %> </p2>
                 
-            <% } %>
-            <%if (post.dislikedBy==null) { %>
-                <p class='dislikesCounter'>  No dislikes. </p>
+                <% } %>
+                <%if (post.likedBy==null) { %>
+                    <p2 class='likesCounter' >  No likes. </p2>
+                    <% } %>  
+            </div>    
+
+
+            <div class="dislikesClass">
+                <form class='dislikeButton' method="post" action="/posts/<%= post.id %>/dislike/">
+                    <button type="submit">Dislike</button>
+                </form>
+            
+                
+                <%if (post.dislikedBy) { %>
+                    <p2 class='dislikesCounter'> Dislikes: <%=post.dislikedBy.length %> </p2>
+                    
+                <% } %>
+                <%if (post.dislikedBy==null) { %>
+                    <p2 class='dislikesCounter'>  No dislikes. </p2>
         
-            <% } %>   
+                 <% } %>   
+            </div>
         </div> 
     <% }); %>
 </div>

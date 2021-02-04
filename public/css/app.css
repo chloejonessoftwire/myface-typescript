@@ -57,9 +57,27 @@ body{
     
 }
 .postMessage{
-    float: left;;
+    float: left;
+}
+.likesClass{
+    float:left;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    
+}
+.dislikesClass{
+    float:right;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    text-align: right;
+   
 
 }
+
+
+
 @media only screen and (max-width: 900px){
     body{
         font-size: 14px;

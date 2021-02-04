@@ -73,9 +73,7 @@ h3{
 
 
 }
-.userdetail{
-    /* float: left */
-}
+
 @media only screen and (max-width: 900px){
     body{
         font-size: 14px;
