@@ -7,12 +7,19 @@
 <br>
 <div class="grid-container-chloe">
     <% results.forEach(function(post) {%>
-        <div class="item-post">    
+        <div class="item-post">  
+              
             <img class="profileImage" src= '<%= post.postedBy.profileImageUrl %>'>
-            <h3 class="postMessage"> <%= post.message %></h3>
-            <h4 class="postedBy"> by <%= post.postedBy.name %> </h4>
-            <p class="postedDate"> Post created on  <%= post.createdAt %> </p>               
-            <img class="postImage" src='<%= post.imageUrl %>' value = "Image" >
+            <div class='postTopMessage'>
+                <h7 class="postedBy"> <%= post.postedBy.username %> </h7>
+                <p1 class="postedDate"> Posted: <%= post.createdAt %> </p1>
+    
+            </div>  
+            
+            <h6 class="postMessage"> <%= post.message %></h6> 
+            <div class="postImageSpace" >         
+                <img class="postImage" src='<%= post.imageUrl %>' value = "Image" >
+            </div> 
             <form class='likeButton' method="post" action="/posts/<%= post.id %>/like/">
                 <button type="submit">Like</button>
             </form>
